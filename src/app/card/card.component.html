@@ -1,0 +1,59 @@
+<!-- <div class="container-fluid" style="margin-bottom: 15px;">
+      
+    <div class="col-3" style=" border-radius: 10px;" > -->
+        <div class="d-flex">
+        <div class="card" style=" background-color: rgb(230, 230, 230); margin-top: 5px; width: 18rem; margin: 5px; height: 100%;" *ngFor="let title of cardhead let i=index">
+           
+            <div class="card-body">
+                <!-- <h6>{{title.cardtitle}}</h6> -->
+                <div class="menu-nav">
+                    <b >{{title.cardtitle}}</b>
+                    <div class="dropdown-container" tabindex="-1">
+                      <div class="three-dots" style="margin-left: 10px;"></div>
+                      <div class="dropdown">
+                        <button class="btn btn-danger btn-sm" type="submit" (click)="DeleteTitle(title.id)"><div>Delete</div></button>
+                      </div>
+                    </div>
+                  </div>
+
+               <DIV class="example-list" cdkDropList #todoList="cdkDropList" [cdkDropListData]="Todovalue" (cdkDropListDropped)="drop($event)">
+                <div class="" style="background-color: rgb(255, 255, 255); margin-top: 5px; border-radius: 5px; box-shadow: 1px 1px 3px #888888; " *ngFor="let Todo of Todovalue | searchFilter:searchkey:'Tododata'" cdkDrag > 
+                  <div class="card-body" *ngIf="title.id==Todo.CardId" >
+                    <p class="card-text">{{Todo.Tododata}}</p>  
+                  </div>
+                </div>
+               </DIV>
+
+               <!-- <div class="card" *ngFor="let Todo of Todovalue | searchFilter:searchkey:'Tododata'" cdkDrag cdkDropList #todoList="cdkDropList" [cdkDropListData]="Todovalue" class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="card-body" *ngIf="title.id==Todo.CardId">
+                     <p class="card">{{Todo.Tododata}}</p>
+                </div>
+             </div> -->
+       
+
+
+                
+                <Form [formGroup]="TodoForm" [hidden]="InputForm" (ngSubmit)="addTodo()" class="mb-3" *ngIf="index===title.id" style="margin-top: 10px;">
+                    <textarea formControlName="Tododata" class="form-control" id="exampleFormControlTextarea1" placeholder="Enter a title for this card" rows="2"></textarea>
+                    <button type="submit" class="btn btn-warning btn-sm" style="margin-top: 10px;">Add Note</button><i (click)="close()" style="margin-left: 8px;" class="fa fa-times" aria-hidden="true"></i>
+                  </Form>
+                  
+
+                 
+              <a (click)="cardid(title.id)" class="btn btn-primary btn-sm" style="margin-top: 10px; box-shadow: 1px 1px 10px #888888;">Add card</a>
+             
+
+              <!-- <button type="button" data-bs-dismiss="toast" class="btn-close" aria-label="Close"></button> -->
+              
+             
+            </div>
+    </div>
+  </div>
+
+
+
+
+<!-- </div>
+</div> -->
+
+

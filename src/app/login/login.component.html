@@ -1,0 +1,29 @@
+<div class="log">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="box-shadow: 5px 5px 70px rgb(38, 58, 65);">
+                <div class="text-center">
+                    <h2>Login</h2>
+                    <h6>Please Enter Email & Password</h6>
+                </div>
+                <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" autocomplete="off"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" >
+                      <!-- <div style="color: red;" >Please Enter Email</div> -->
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" autocomplete="off"  class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      <!-- <div style="color: red;" >Please Enter Password</div> -->
+                    </div>
+
+                    <!-- <div *ngIf="error!='' " style="color: red;">{{error}}</div> Incorrect Credintials Error -->
+
+                    <button type="submit" class="btn btn-primary btn-sm" routerLink="/home">Submit</button>
+                  </form>
+                  <p>New User? <a class="b" routerLink="/signup">Signup</a></p>
+            </div>
+        </div>
+    </div>
+</div>

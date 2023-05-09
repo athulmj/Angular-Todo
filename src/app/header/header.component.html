@@ -1,0 +1,133 @@
+<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <div class="container-fluid">
+    <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: white; font-size: 25px; padding: 10px;"></i>
+    <a class="navbar-brand" href="#"><b>Notepad</b></a>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Workspaces
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="">Action</a></li>
+            <li><a class="dropdown-item" href="">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Recent
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="">Action</a></li>
+            <li><a class="dropdown-item" href="">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="">Something else here</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Starred
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="">Action</a></li>
+            <li><a class="dropdown-item" href="">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="">Something else here</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Templates
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="">Action</a></li>
+            <li><a class="dropdown-item" href="">Another action</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="">Something else here</a></li>
+          </ul>
+        </li>
+
+        <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: aliceblue; background-color: #5399ff; margin-top: 2px;">Create</button>
+      </ul>
+
+      <!-- <form class="d-flex">
+        <input class="nosubmit" type="search" placeholder="Search..." style="color: white; background-color: #5399ff;">
+
+      </form> -->
+
+        <!-- Actual search box -->
+
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+
+        <div class="form-group has-search">
+          <span class="fa fa-search form-control-feedback"></span>
+          <input [(ngModel)]="searchkey" name="searchkey" (keyup)="search($event)" type="text"  class="form-control" placeholder="Search" style="color: white;">
+        </div>
+
+      <i class="fa fa-bell-o" aria-hidden="true" style="color: white; font-size: 25px; padding: 10px; transform: rotate(30deg);"></i>
+      <i class="fa fa-question-circle-o" aria-hidden="true" style="color: white; font-size: 25px; padding: 10px;"></i>
+      <a href=""><i class="fa fa-user" aria-hidden="true" style="color: white; font-size: 25px; padding: 10px; "></i></a>
+    </div>
+  </div>
+</nav>
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- Modal -->
+<div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content" >
+      <div class="modal-header" style="background-color: #aed0fc;">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" >Trello DataBase</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="background-color: #c3dbfc;">
+        <div class="col-md-8" id="htmlData">
+          <table class="table">
+              <tr class="table-primary">
+                  <th>Sl No</th>
+                  <th>Todo Note</th>
+
+              </tr>
+              <tr *ngFor="let user of Todovalue">
+                  <td>)</td>
+                  <td>{{user.Tododata}}</td>
+
+              </tr>
+          </table>
+      </div>
+      </div>
+      <div class="modal-footer" style="background-color: #aed0fc;">
+        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" (click)="openPDF()" class="btn btn-primary">Print</button> -->
+        <button class="btn btn-primary btn-sm" (click)="openPDF()"><i class="fa fa-download"></i> Download PDF</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<div class="d-flex scrolldiv" style="margin-top: 10px;">
+<app-card></app-card>
+  <!-- <div class="container-fluid">
+    <div class="row" >
+      <div class="col-6" > -->
+        <div style="padding: 5px;">
+          <button (click)="showcard=!showcard" class="btn"
+            style="color: white; font-size: 15px; background-color: #5399ff; width: 200px; margin-bottom: 10px; "><i class="fa fa-plus"
+              aria-hidden="true"></i> Add another list</button>
+  
+              <Form [formGroup]="cardform" (ngSubmit)="createcard()" *ngIf="showcard" style="width: 349px; height: 118px; padding: 20px; background-color: rgb(170, 205, 236); border-radius: 10px;" >
+                <input type="text" autocomplete="off" formControlName="cardtitle" class="form-control" id="formGroupExampleInput" placeholder="Add Card Name">
+                <button type="submit" style="margin-top: 8px;" class="btn btn-success btn-sm mb-3">Add List</button>
+                
+              </Form>
+              
+        </div>
+        
+      <!-- </div>
+      <div class="col-6"></div>
+      <div class="col-6"></div>
+    </div>
+  </div> -->
+
+
+
+</div>
